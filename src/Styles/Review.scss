@@ -1,0 +1,21 @@
+.Review {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    
+    > img {
+        height: 250px;
+    }
+}
+
+.Review .detail{
+    width: 50vw;
+    margin: 2em 0px;
+    > div {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center; 
+    }
+    
+}

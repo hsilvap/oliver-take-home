@@ -4,6 +4,30 @@
   margin: 24px auto 0;
 }
 
+
+.Home > ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Home > ul > li{
+  display: inline-flex;
+  min-width: 125px;
+  justify-content: center;
+}
+
+.Home > ul > li > a {
+  text-decoration: none;
+  color: black;
+  &:visited{
+    color: #ffe82f;
+  }
+  &:hover{
+    font-weight: bolder;
+  }
+}
+
 ul {
   text-align: left;
 }
