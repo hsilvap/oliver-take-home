@@ -10,8 +10,11 @@
 }
 
 .Review .detail{
-    width: 50vw;
+    width: 20vw;
     margin: 2em 0px;
+    @media (max-width: 750px){
+        width: 50vw;
+    }
     > div {
     display: grid;
     grid-template-columns: 1fr 2fr;
