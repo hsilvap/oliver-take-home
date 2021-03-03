@@ -23,3 +23,13 @@ You can then make requests to http://localhost:3004/products, http://localhost:3
 More info on json-server [here](https://www.npmjs.com/package/json-server)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Wishlist - pending stuff
+
+* Honestly I spent a lot of time styling the app and I didnt have enough time to create a star rating component =( so I used a numeric input instead
+* Add more navigation buttons
+* Use a reducer or global state lib to set the selected product rather than fetching it several times
+* Add more and nicer styles.. lol
+* Add notifications to the user when a review is submitted
+
+
