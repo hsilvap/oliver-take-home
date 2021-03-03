@@ -1,13 +1,15 @@
 import Axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { PRODUCT } from '../Endpoints';
+import { PRODUCT, REVIEWS } from '../Endpoints';
 import '../Styles/Product.scss';
 
 const Product = () => {
     let { id } = useParams();
+    const formRef = useRef(null)
     const [product, setproduct] = useState({})
     const [loading, setloading] = useState(true)
+
     useEffect(() => {
         const getProduct = async () => {
             const { data } = await Axios.get(PRODUCT(id))
@@ -16,6 +18,25 @@ const Product = () => {
         }
         getProduct()
     }, [])
+
+    const handleOnClick = async (e) => {
+        e.preventDefault()
+        setloading(true)
+        try {
+            await Axios.post(REVIEWS, {
+                "headline": formRef.current[0].value,
+                "author": formRef.current[1].value,
+                "star_rating": formRef.current[2].value,
+                "body": formRef.current[3].value,
+                "productId": id
+            })
+        } catch (error) {
+            console.error(error)
+        } finally{
+            setloading(false)
+        }
+
+    }
 
     if (loading) {
         return <div>....Loading</div>
@@ -28,21 +49,15 @@ const Product = () => {
             alt={`${product.name}`} />
         <h1>{product.name}</h1>
 
-        <form>
+        <form ref={formRef}>
             <h2>Add your review</h2>
-            <input />
-            <div className="star-rating">
-                {[...Array(5)].map((star) => {
-                    return (
-                        <span className="star">&#9733;</span>
-                    );
-                })}
-            </div>
-            <input />
-            <textarea></textarea>
-            
+            <input placeholder="Title" id="title" />
+            <input placeholder="Author" id="author" />
+            <input type="number" id="star" min="0" max="5" placeholder="rating 0 to 5" />
+            <textarea placeholder="Enter your review..." id="body"></textarea>
+
             <div className="btn-container">
-                <button className="btn">Add </button>
+                <button className="btn" onClick={handleOnClick}> Add </button>
                 <Link className="btn" to={`${id}/reviews`}>
                     See reviews
                 </Link>

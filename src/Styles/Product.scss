@@ -38,5 +38,8 @@
     display: flex;
     flex-flow: column;
     width: 300px;
+    > input, textarea {
+        margin: 0.5em 0px;
+    }
 
 }

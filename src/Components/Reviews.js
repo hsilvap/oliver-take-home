@@ -32,8 +32,8 @@ const Reviews = () => {
         <section>
             {product.reviews.length > 0 ? product.reviews.map(p => {
                 return <div className="detail" key={p.id}>
-                    <div> <h2> Title</h2> <span> {p.author} </span></div>
-                    <div> <span> Star rating</span> <span> {p.star_rating} </span></div>
+                    <div> <h2> Title</h2> <span> {p.headline} </span></div>
+                    <div> <span> Star rating</span> <span>{[...Array(p.star_rating)].map((star, index) => <span  key={index} className="star">&#9733;</span>)}</span></div>
                     <div> <span> Body</span> <p> {p.body} </p></div>
                     <div> <small> Author</small> <small> {p.author} </small></div>
                 </div>

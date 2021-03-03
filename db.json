@@ -33,6 +33,30 @@
       "body": "Would rent this dining room table one hundred times over.",
       "productId": "0",
       "id": 2
+    },
+    {
+      "headline": "Test review",
+      "author": "Homero",
+      "star_rating": "2",
+      "body": "This is great!",
+      "productId": "1",
+      "id": 3
+    },
+    {
+      "headline": "Test review",
+      "author": "Homero",
+      "star_rating": "2",
+      "body": "another test!",
+      "productId": "1",
+      "id": 4
+    },
+    {
+      "headline": "My test review",
+      "author": "Homero",
+      "star_rating": "4",
+      "body": "Just a test",
+      "productId": "2",
+      "id": 5
     }
   ]
 }
