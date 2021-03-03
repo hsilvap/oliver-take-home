@@ -31,5 +31,5 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 * Use a reducer or global state lib to set the selected product rather than fetching it several times
 * Add more and nicer styles.. lol
 * Add notifications to the user when a review is submitted
-
+* Add validations to the form, maybe using FORMIK
 
